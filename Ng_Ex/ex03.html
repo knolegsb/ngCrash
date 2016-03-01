@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <script src="Scripts/angular.js"></script>
+    <script src="bankApp.js"></script>
+    <style>
+        ul{
+            list-style: none;
+        }
+    </style>
+</head>
+<body>
+    <div ng-app="bankApp">
+        <ul ng-controller="balanceController">
+            <li ng-repeat="user in users | orderBy: 'name'">Name: {{user.name | uppercase}} -- Balance: {{user.balance | currency}}
+                <a href="#" ng-click="remove(user)">Delete</a>
+                <a href="#" ng-click="edit(user)">Edit</a>
+            </li>
+            <li>
+                <input type="text" id="name" ng-model="current.name" value="{{current.name}}" />
+                <input type="text" id="balance" ng-model="current.balance" value="{{current.balance}}" />
+            </li>
+            <li>
+                <button ng-click="save(current)">Edit Existing User</button>
+                <button ng-click="addNew(current)">Add New User</button>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>

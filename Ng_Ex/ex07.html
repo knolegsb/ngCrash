@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <script src="Scripts/angular.js"></script>
+    <script src="validationAndBinding.js"></script>
+    <style>
+        .error {color: red;}
+    </style>
+</head>
+<body>
+    <div id="test" ng-app="validationAndBinding"  ng-controller="usersController">
+        <form name="myForm">
+            <div ng-hide="editedUser == undefined">
+                <input type="text" name="userName" ng-model="editedUser.name" required />
+                <span class="error" ng-show="myForm.userName.$error.required">Required!</span>
+                <button ng-hide="myForm.userName.$error.required" ng-click="save(editedUser)">Save</button>
+            </div>
+            <ul>
+                <li ng-repeat="u in users">
+                    <a href="#" ng-click="edit(u)">{{u.name}}</a>
+                </li>
+            </ul>
+        </form>
+    </div>
+</body>
+</html>

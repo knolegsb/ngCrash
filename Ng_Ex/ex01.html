@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Ng_Ex01</title>
+	<meta charset="utf-8" />
+    <script src="Scripts/angular.js"></script>
+    <style>
+        h3 {
+            text-align: left;
+            direction: rtl;
+            unicode-bidi: bidi-override;
+        }
+    </style>
+</head>
+<body>
+    <div ng-app="">
+        <div>Type in text to see it reversed: </div>
+        <input type="text" ng-model="reversedName"/>
+        <h3>{{reversedName + " backwards"}}</h3>
+
+        <!--<input type="checkbox" ng-model="tfCheck"  ng-true-value="This box is checked" ng-false-value="This box is unchecked" />
+        <h2>{{tfCheck}}</h2>-->
+
+        <form name="form1">
+            <input type="text" name="first-name" required />
+            <input type="submit" value="Submit" ng-click="submitted=true" />
+            <span ng-show="submitted && form1.$invalid">First name is submitted!</span>
+        </form>
+    </div>
+</body>
+</html>

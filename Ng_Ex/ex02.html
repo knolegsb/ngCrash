@@ -1,0 +1,18 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <script src="Scripts/angular.js"></script>
+    <script src="controller.js"></script>
+</head>
+<body>
+    <div ng-app="ageGuesser">
+        <div ng-controller="ageController">
+            <input type="text" ng-model="fullName" />
+            <button ng-click="retryAge()">Retry</button>
+            <p>Hello {{fullName}}! Are you {{age}}?</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <script src="Scripts/angular.js"></script>
+    <script src="filterApp.js"></script>
+</head>
+<body>
+    <div ng-app="filterApp" ng-controller="httpController">
+        <select ng-model="posting" ng-change="handleChange(posting)">
+            <option ng-repeat="post in posts" value="{{post.id}}">{{post.id + ". " + post.title}}</option>
+        </select>
+
+        <ul>
+            <li ng-repeat="c in comments">
+                {{c.email}} - {{c.body}}
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
